@@ -40,7 +40,7 @@ public class StepDefinitions extends Page {
 
     @When("^I add the book to my collection$")
     public void i_add_the_book_to_my_collection() {
-        new HomePage().select_Product(1);
+        new HomePage().select_Product(0);
         new ProductListingPage().clickOn_AddToCollection();
     }
 
@@ -67,7 +67,7 @@ public class StepDefinitions extends Page {
 
     @Then("^verify that the Profile page is displayed$")
     public void verifyThatTheProfilePageIsDisplayed() {
-        new ProfilePage().verifyThatTheProfilePageIsDisplayed();
+        new HomePage().verifyThatUserIsLoggedIn();
     }
 
 

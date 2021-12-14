@@ -13,7 +13,7 @@ public class OptionsManager extends TestBase{
         ChromeOptions opt = new ChromeOptions();
 
         if (prop.getProperty("local").equalsIgnoreCase("true")){
-            opt.addArguments("--headless");
+//            opt.addArguments("--headless");
             opt.addArguments("--ignore-certificate-errors");
             opt.addArguments("--start-maximized");
             opt.addArguments("--no-cache");
