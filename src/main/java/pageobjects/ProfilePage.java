@@ -1,5 +1,7 @@
 package pageobjects;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,6 +18,7 @@ public class ProfilePage extends Page {
     WebElement header_MainProfile;
     @FindBy(xpath = "//button[contains(@id,'submit')][contains(text(),'Log out')]")
     WebElement btn_logOut;
+    WebDriverWait wait = new WebDriverWait(driver,10);
 
     public ProfilePage() {
         PageFactory.initElements(driver, this);
@@ -31,6 +34,7 @@ public class ProfilePage extends Page {
     }
 
     public void logout() {
+        wait.until(ExpectedConditions.elementToBeClickable(btn_logOut));
         btn_logOut.click();
     }
 }

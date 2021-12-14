@@ -20,6 +20,11 @@ public class HomePage extends Page {
     }
 
     public static void select_Product(int productNumber) {
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         prd_List.get(productNumber).click();
     }
 
