@@ -87,14 +87,5 @@ public class StepDefinitions extends Page {
         driver.switchTo().alert().accept();
     }
 
-    @After("@scenario")
-    public void tearDown(Scenario scenario) {
-        if (scenario.isFailed()) {
-            File srcFile = ((TakesScreenshot) DriverFactory.getInstance().getDriver()).getScreenshotAs(OutputType.FILE);
-            String strTestName = scenario.getName()+".png";
-            scenario.attach(String.valueOf(srcFile),"image/png",strTestName);
-        }
-        System.out.println("tearDown started");
-        driver.close();
-    }
+
 }
